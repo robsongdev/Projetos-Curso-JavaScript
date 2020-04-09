@@ -4,67 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu de Atividades</title>
-    <link rel="stylesheet" href="estilo.css">
 
     <style>
         body {
-    background: rgb(70, 142, 236);
-    font: normal 15pt Arial;
-}
+            background: rgb(70, 142, 236);
+            font: normal 15pt Arial;
+        }
 
-header {
-    color: white;
-    text-align: center;
-}
+        header {
+            color: white;
+            text-align: center;
+        }
 
-section {
-    background: white;
-    border-radius: 10px; /* borda arredondada*/
-    padding: 15px;
-    width: 500px;
-    margin: auto;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);/* Sombreamento*/
-}
+        div {
+            background: white;
+            border-radius: 10px; /* borda arredondada*/
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);/* Sombreamento*/
+        }
 
-footer {
-    color: white;
-    text-align: center;
-    font-style: italic;
-}
+        footer {
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Menu de Atividades</h1>
     </header>
-    <section>
+    
         <div>
             Exercicio Aula 12
             <ul>
-                <li><a href="aula12ex/ex014/modelo.html">Exercicio 1</a></li>
-                <li><a href="aula12ex/ex015/modelo.html">Exercicio 2</a></li>
+                <li><a href="aula12ex/ex014/modelo.html" onmouseover="description(0)" onmouseout="cleardesc()">Hora do dia</a></li>
+                <li><a href="aula12ex/ex015/modelo.html" onmouseover="description(1)" onmouseout="cleardesc()">Verificador de Idade</a></li>
             </ul>
 
             Exercicio Aula 14
             <ul>
-                <li><a href="aula14ex/ex016/modelo.html">Exercicio 1</a></li>
-                <li><a href="aula14ex/ex017/modelo.html">Exercicio 2</a></li>
+                <li><a href="aula14ex/ex016/modelo.html" onmouseover="description(2)" onmouseout="cleardesc()">Contagem</a></li>
+                <li><a href="aula14ex/ex017/modelo.html" onmouseover="description(3)" onmouseout="cleardesc()">Tabuada</a></li>
             </ul>
 
             Exercicio Aula 16
             <ul>
-                <li><a href="aula16ex/Modelo/modelo.html">Exercicio 1</a></li>
+                <li><a href="aula16ex/Modelo/modelo.html" onmouseover="description(4)" onmouseout="cleardesc()">Analizador de Numeros</a></li>
                 
             </ul>
             
         </div>
-        <div>
+        <div id="desc">
             
         </div>
-    </section>
+    
     <footer>
         <p>@robsongdev</p>
     </footer>
-    <script src="script.js"></script>
+    <script>
+        
+        function description (n){
+            let descElement = document.getElementById('desc')
+            
+            switch (n){
+                case 0:
+                descElement.innerHTML = ''
+                descElement.innerHTML = 'Site que verificar a hora atual,e volta um determinado fundo e imagem central'
+                break
+
+                case 1:
+                descElement.innerHTML = ''
+                descElement.innerHTML = 'Site que o usuario entra com o ano de nascimento e o sexo, e como saída vem uma foto de uma pessoa com essas caracteristicas'
+                break
+
+                case 2:
+                descElement.innerHTML = ''
+                descElement.innerHTML = 'Site que com um numero inicial, final e um intervalo, ele voltas com a sequencia de numeros pedida'
+                break
+
+                case 3:
+                descElement.innerHTML = ''
+                descElement.innerHTML = 'Site que simula uma tabuada, com entrada de apenas um numero e saída com multiplicação de 1 a 10 '
+                break
+
+                case 4:
+                descElement.innerHTML = ''
+                descElement.innerHTML = 'Site que tem como entrada um ou mais numeros e volta com informações dessa sequencia de numeros'
+                break
+            }
+        }
+
+        function cleardesc(){
+            let descElement = document.getElementById('desc')
+            descElement.innerHTML = ''
+            
+        }
+    </script>
 </body>
 </html>
